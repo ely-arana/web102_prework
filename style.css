@@ -22,7 +22,7 @@ body {
 .stats-container {
     display: flex;
     align-items: stretch;
-    flex-direction: column;
+    flex-direction: row;
     }
 
 .stats-container:hover {
