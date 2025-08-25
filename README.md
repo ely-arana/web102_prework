@@ -26,9 +26,7 @@ The following **optional** features are implemented:
 
 Here's a walkthrough of implemented features:
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/__bMkvFWTj4?si=vuBSQFpzIcOCa1eC" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" title='Video Walkthrough' alt='Video Walkthrough' allowfullscreen></iframe>
-
-Video created with Windows Snipping Tool
+https://youtu.be/__bMkvFWTj4
 
 ## Notes
 
