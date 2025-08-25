@@ -42,7 +42,10 @@ function addGamesToPage(games) {
         gameCard.innerHTML = `
         <img class="game-img" src="${games[i].img}" alt="${games[i].name}" />
         <h3>${games[i].name}</h3>
-        <p>${games[i].description}</p> `;
+        <p>${games[i].description}</p> 
+        <p>Backers: ${games[i].backers}</p> 
+        <p>Goal: $${games[i].goal.toLocaleString('en-US')}</p> 
+        <p>Pledged: $${games[i].pledged.toLocaleString('en-US')}</p> `;
         // TIP: if your images are not displaying, make sure there is space
         // between the end of the src attribute and the end of the tag ("/>")
 
@@ -150,7 +153,9 @@ const countUnfundedGames = unfundedGames.length;
 // create a string that explains the number of unfunded games using the ternary operator
 let fundStr = document.createElement("p");
 
-fundStr.innerHTML = `A total of $${totalRaised.toLocaleString('en-US')} has been raised for ${GAMES_JSON.length} games. Currently, ${countUnfundedGames} game${countUnfundedGames === 1 ? '' : 's'} remain${countUnfundedGames === 1 ? 's' : ''} unfunded. We need your help funding these games!`;
+fundStr.innerHTML = `A total of $${totalRaised.toLocaleString('en-US')} has been raised for ${GAMES_JSON.length} 
+games. Currently, ${countUnfundedGames} game${countUnfundedGames === 1 ? '' : 's'} 
+remain${countUnfundedGames === 1 ? 's' : ''} unfunded. We need your help funding these games!`;
 
 // create a new DOM element containing the template string and append it to the description container
 descriptionContainer.appendChild(fundStr);
@@ -168,7 +173,14 @@ const sortedGames =  GAMES_JSON.sort( (item1, item2) => {
 });
 
 // use destructuring and the spread operator to grab the first and second games
+const [firstGame, secondGame, ...rest] = sortedGames;
 
 // create a new element to hold the name of the top pledge game, then append it to the correct element
+const firstGameName = document.createElement('p');
+firstGameName.innerHTML = firstGame.name;
+firstGameContainer.appendChild(firstGameName);
 
 // do the same for the runner up item
+const secondGameName = document.createElement('p');
+secondGameName.innerHTML = secondGame.name;
+secondGameContainer.appendChild(secondGameName);
